@@ -12,8 +12,9 @@
 <body>
     
     <div id="app">
+        <h1>@{{ title }}</h1>
+        <router-view></router-view>
         <header-component></header-component>
-            <example-component></example-component>
         <footer-component></footer-component>
     </div>
     
