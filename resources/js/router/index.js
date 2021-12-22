@@ -4,9 +4,10 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 // Page list
-const Home = require('../components/pages/Home.vue').default
-const About = require('../components/pages/About.vue').default
-const NotFound = require('../components/pages/NotFound.vue').default
+import Home from '../components/pages/Home.vue'
+import About from '../components/pages/About.vue'
+import User from '../components/pages/User.vue'
+import NotFound from '../components/pages/NotFound.vue'
 
 // Route list
 const routes = [
@@ -17,6 +18,10 @@ const routes = [
     {
         path: '/about',
         component: About,
+    },
+    {
+        path: '/user/:name',
+        component: User,
     },
     {
         path: '*',
