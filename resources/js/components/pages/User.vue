@@ -9,7 +9,10 @@
     <h1>Daftar User</h1>
     <ul v-for="r in users">
       <!-- <router-link :to="`/user/${r.name}`">{{ r.name }}</router-link> -->
-      <router-link :to="profile_url(r.name)">{{ r.name }}</router-link>
+
+      <!-- <router-link :to="profile_url(r.name)">{{ r.name }}</router-link> -->
+
+      <a href="" @click.prevent="userdetail(r.name)">{{ r.name }}</a>
     </ul>
   </section>
 </template>
@@ -30,6 +33,9 @@ export default {
   methods: {
     profile_url(name) {
       return `user/${name.toLowerCase()}`;
+    },
+    userdetail(name) {
+      return this.$router.push(`user/${name.toLowerCase()}`);
     },
   },
 };
