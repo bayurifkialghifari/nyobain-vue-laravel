@@ -5398,6 +5398,7 @@ var routes = [{
 }]; // Vue Router Initialitation
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
+  linkActiveClass: 'text-success',
   mode: 'history',
   routes: routes
 });

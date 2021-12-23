@@ -32,6 +32,7 @@ const routes = [
 
 // Vue Router Initialitation
 const router = new VueRouter({
+    linkActiveClass: 'text-success',
     mode: 'history',
     routes,
 })
