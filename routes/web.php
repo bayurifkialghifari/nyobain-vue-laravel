@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::any('/{slug}/{slug2?}', function() {
+Route::get('/{slug}', function() {
     return view('main');
-});
+})->where('slug', '.*');
