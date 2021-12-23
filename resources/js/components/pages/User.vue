@@ -8,7 +8,8 @@
   <section v-else>
     <h1>Daftar User</h1>
     <ul v-for="r in users">
-      <li>{{ r.name }}</li>
+      <!-- <router-link :to="`/user/${r.name}`">{{ r.name }}</router-link> -->
+      <router-link :to="profile_url(r.name)">{{ r.name }}</router-link>
     </ul>
   </section>
 </template>
@@ -25,6 +26,11 @@ export default {
         { id: 4, name: "Test4" },
       ],
     };
+  },
+  methods: {
+    profile_url(name) {
+      return `user/${name.toLowerCase()}`;
+    },
   },
 };
 </script>

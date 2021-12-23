@@ -5258,6 +5258,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["name"],
   data: function data() {
@@ -5276,6 +5277,11 @@ __webpack_require__.r(__webpack_exports__);
         name: "Test4"
       }]
     };
+  },
+  methods: {
+    profile_url: function profile_url(name) {
+      return "user/".concat(name.toLowerCase());
+    }
   }
 });
 
@@ -28347,7 +28353,15 @@ var render = function () {
           _c("h1", [_vm._v("Daftar User")]),
           _vm._v(" "),
           _vm._l(_vm.users, function (r) {
-            return _c("ul", [_c("li", [_vm._v(_vm._s(r.name))])])
+            return _c(
+              "ul",
+              [
+                _c("router-link", { attrs: { to: _vm.profile_url(r.name) } }, [
+                  _vm._v(_vm._s(r.name)),
+                ]),
+              ],
+              1
+            )
           }),
         ],
         2
