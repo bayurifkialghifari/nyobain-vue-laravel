@@ -5266,20 +5266,16 @@ __webpack_require__.r(__webpack_exports__);
   props: ["name"],
   data: function data() {
     return {
-      users: [{
-        id: 1,
-        name: "Test1"
-      }, {
-        id: 2,
-        name: "Test2"
-      }, {
-        id: 3,
-        name: "Test3"
-      }, {
-        id: 4,
-        name: "Test4"
-      }]
+      users: []
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    // Call api with axios
+    axios.get("/api/users").then(function (res) {
+      _this.users = res.data;
+    });
   },
   methods: {
     profile_url: function profile_url(name) {

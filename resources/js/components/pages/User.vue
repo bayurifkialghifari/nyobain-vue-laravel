@@ -22,13 +22,14 @@ export default {
   props: ["name"],
   data() {
     return {
-      users: [
-        { id: 1, name: "Test1" },
-        { id: 2, name: "Test2" },
-        { id: 3, name: "Test3" },
-        { id: 4, name: "Test4" },
-      ],
+      users: [],
     };
+  },
+  mounted() {
+    // Call api with axios
+    axios.get("/api/users").then((res) => {
+      this.users = res.data;
+    });
   },
   methods: {
     profile_url(name) {
